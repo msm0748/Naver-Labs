@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+    }
+    .slidwrap{
+      overflow: hidden;
+      max-width: 800px;
+      /* margin: 0 auto; */
+    }
+    .slidwrap .slidelist{
+      white-space: nowrap;
+      font-size: 0;
+    }
+    .slidwrap .slidelist li{
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      width: 100%;
+      transition: all .5s;
+    }
+    .slidwrap .slidelist li a{
+      display: block;
+      position: relative;
+
+    }
+    .slidwrap .slidelist li a > img{
+      display: block;
+      width: 100%;
+      height: 1200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slidwrap">
+    <ul class="slidelist">
+      <li><a href=""><img src="네이버랩스/main.jpg" alt=""></a></li>
+      <li><a href=""><img src="네이버랩스/main2.jpg" alt=""></a></li>
+      <li><a href=""><img src="네이버랩스/main3.jpg" alt=""></a></li>
+    </ul>
+  </div>
+  <button>다음</button>
+  <script>
+    let slid = document.querySelector('li:nth-child(2)');
+    document.querySelector('button').addEventListener('click', function(){
+      slid.style.transform = 'translateX(-100%)';
+    })
+  </script>
+</body>
+</html>
