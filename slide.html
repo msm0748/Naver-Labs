@@ -44,16 +44,17 @@
 <body>
   <div class="slidwrap">
     <ul class="slidelist">
-      <li><a href=""><img src="네이버랩스/main.jpg" alt=""></a></li>
-      <li><a href=""><img src="네이버랩스/main2.jpg" alt=""></a></li>
-      <li><a href=""><img src="네이버랩스/main3.jpg" alt=""></a></li>
+      <li><a href=""><img src="main.jpg" alt=""></a></li>
+      <li><a href=""><img src="main2.jpg" alt=""></a></li>
+      <li><a href=""><img src="main3.jpg" alt=""></a></li>
     </ul>
   </div>
   <button>다음</button>
   <script>
-    let slid = document.querySelector('li:nth-child(2)');
+    let slide = document.querySelector('ul');
+	console.log(slide.childElementCount);
     document.querySelector('button').addEventListener('click', function(){
-      slid.style.transform = 'translateX(-100%)';
+      slide.style.transform = 'translateX(-100%)';
     })
   </script>
 </body>
