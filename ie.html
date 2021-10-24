@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        input[type="radio"] {
+            display:none;
+        }
+        input[type="radio"] + label span {
+            display:inline-block;
+            width:80px;
+            height:19px;
+            background:gray;
+            cursor: pointer;
+        }
+        input[type="radio"] + label span:hover {
+            background: blue;
+        }
+        input[type="radio"]:checked + label span {
+
+            background:blue;
+        }
+
+
+        .slide {
+            position:absolute;
+            left:0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+/* 
+        .slide {
+            width: 3000px;
+            transition: transform 0.5s;
+        } */
+        .slide .slide_list:nth-child(1) {
+            left: 0;
+        }
+        .slide .slide_list:nth-child(2) {
+            left: 100%;
+        }
+        .slide .slide_list:nth-child(3) {
+            left: 200%;
+        }
+
+
+
+
+        input[type="radio"]:nth-child(2):checked ~ .slide{
+            transform: translate(-1000px);
+        }
+
+        ul{
+            list-style:none;
+            padding: 0;
+        }
+        ul li{
+            padding-left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    
+        <ul class="slide">
+            <li class="slide_list">
+                <a href="#">
+                    <div class="main_photo">
+                        <img src="main.jpg" alt="다리">
+                    </div>
+                    <h3>서울 전역을 3D로, 항공사진 기반 서울시 3D 모델링</h3>
+                </a>
+            </li>
+            <li class="slide_list">
+                <a href="#">
+                    <div class="main_photo">
+                        <img src="main2.jpg" alt="다리">
+                    </div>
+                    <h3>네이버 제2사옥, 로봇을 위한 5G 실험 본격화 눈앞</h3>
+                </a>
+            </li>
+            <li class="slide_list">
+                <a href="#">
+                    <div class="main_photo">
+                        <img src="main3.jpg" alt="다리">
+                    </div>
+                    <h3>네이버랩스 오픈데이터셋 페이지 오픈</h3>
+                </a>
+            </li>
+        </ul>
+        <div class="slide_btn">
+            <input type="radio" id="c1" name="cc" checked />
+            <label for="c1"><span></span></label>
+            <input type="radio" id="c2" name="cc" />
+            <label for="c2"><span></span></label>
+            <input type="radio" id="c3" name="cc" />
+            <label for="c3"><span></span></label>
+        </div>
+    
+
+</body>
+</html>
