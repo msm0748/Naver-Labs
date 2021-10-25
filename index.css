@@ -76,51 +76,6 @@ ul {
   z-index: 1;
 }
 
-@media (max-width: 1000px) {
-  .nav {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    z-index: 99;
-  }
-  .nav .inner .logo {
-    padding: 10px 0;
-    margin: 0;
-  }
-  .nav .inner .logo a {
-    color: white;
-  }
-
-  .nav .inner button {
-    display: block;
-    position: fixed;
-    right: 10px; /* 가로 스크롤 수정 이전까지 대체 */
-    top: 15px; /* 가로 스크롤 수정 이전까지 대체 */
-  }
-
-  .nav .inner .nav_menu {
-    display: none;
-  }
-  /* 크기가 줄어들면 js로 .menu_bar를 body에 추가 그 이후 선택자의 우선순위로 입힘 */
-  .menu_bar .nav .inner .nav_menu {
-    display: flex;
-    flex-direction: column;
-    background-color: yellow;
-    padding: 20px;
-    font-size: 35px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-    z-index: 1;
-  }
-}
-
 /* nav css */
 .section {
   padding: 40px 0;
@@ -130,11 +85,17 @@ ul {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  padding-left: 20px;
 }
 
 .section .inner .aside {
   padding-left: 20px;
-  width: 200px;
+  width: 180px;
+}
+@media (max-width: 950px) {
+  .section .inner .aside {
+    display: none;
+  }
 }
 
 .section .inner .aside h3 {
@@ -200,6 +161,7 @@ ul {
 
 .section .inner .contents .main .slide_hidden {
   overflow: hidden;
+  max-width: 1000px;
 }
 
 .section .inner .contents .main .slide_hidden img {
@@ -207,12 +169,18 @@ ul {
   height: 400px;
 }
 .section .inner .contents .main .slide_hidden .slide {
-  width: 3000px;
-  transition: all 0.5s;
+  white-space: nowrap;
+  font-size: 0;
 }
 .section .inner .contents .main .slide_hidden .slide .slide_list {
-  width: 1000px;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  transition: all 0.5s;
+}
+.section .inner .contents .main .slide_hidden .slide .slide_list h3 {
+  font-size: 20px;
+  width: 0;
 }
 .section .inner .contents .main .slide_btns button:hover {
   background: #3636f7;
@@ -259,7 +227,6 @@ ul {
 }
 
 .section .inner .contents .article .article_content {
-  /* max-width: 600px; */
   padding-right: 20px;
 }
 
@@ -281,13 +248,23 @@ ul {
   padding-right: 8px;
 }
 
+@media (max-width: 760px) {
+  .section .inner .contents .article {
+    flex-direction: column;
+  }
+  .section .inner .contents .article .article_content {
+    order: 2;
+  }
+}
+
 /* article */
 .footer {
   height: 140px;
   background: rgb(51, 51, 51);
+  font-size: 12px;
 }
 .footer .footer_inner {
-  width: 1200px;
+  max-width: 1200px;
   height: 100%;
   margin: auto;
   display: flex;
@@ -367,6 +344,56 @@ ul {
 }
 
 @media (max-width: 1000px) {
+  .nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: 99;
+  }
+  .nav .inner .logo {
+    padding: 10px 0;
+    margin: 0;
+  }
+  .nav .inner .logo a {
+    color: white;
+  }
+
+  .nav .inner button {
+    display: block;
+    position: fixed;
+    right: 10px; /* 가로 스크롤 수정 이전까지 대체 */
+    top: 15px; /* 가로 스크롤 수정 이전까지 대체 */
+  }
+
+  .nav .inner .nav_menu {
+    display: none;
+  }
+  /* 크기가 줄어들면 js로 .menu_bar를 body에 추가 그 이후 선택자의 우선순위로 입힘 */
+  .menu_bar .nav .inner .nav_menu {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    padding: 20px;
+    font-size: 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    z-index: 1;
+  }
+  .footer .footer_inner {
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .footer .footer_inner .footer_left .sns p {
+    display: none;
+  }
+
   .footer_inner.footer_m {
     position: fixed;
     z-index: 99;

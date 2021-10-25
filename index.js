@@ -15,10 +15,10 @@ document.querySelector('.footer_right select').addEventListener("change", functi
 })
 
 document.querySelector(".silde_btn2").addEventListener("click", function() {
-    document.querySelector(".slide").style.transform = 'translate(-1000px)';
+    document.querySelector(".slide").style.transform = 'translateX(-100%)';
 });
 document.querySelector(".silde_btn3").addEventListener("click", function() {
-    document.querySelector(".slide").style.transform = 'translate(-2000px)';
+    document.querySelector(".slide").style.transform = 'translateX(-200%)';
 });
 document.querySelector(".silde_btn1").addEventListener("click", function() {
     document.querySelector(".slide").style.transform = 'translate(0)';
